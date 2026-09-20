@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sargoth Hanesi | Rothad Hanesi</title>
+<meta name="description" content="Sargoth Hanesi — Rothad Hanesi'nin tarihi, toprakları ve kronikleri.">
+<style>
+:root{
+ --bg:#070907;--panel:#0d130e;--panel2:#111a12;--gold:#c9a85b;
+ --gold2:#e4c980;--text:#eee7d5;--muted:#a7afa5;--line:rgba(201,168,91,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+nav{
+ position:fixed;z-index:20;top:0;left:0;right:0;padding:18px 6%;
+ display:flex;justify-content:space-between;align-items:center;
+ background:linear-gradient(rgba(5,7,5,.92),transparent);backdrop-filter:blur(6px)
+}
+.brand{font-family:Georgia,serif;letter-spacing:4px;color:var(--gold2);font-size:14px}
+nav a{color:#ddd6c5;text-decoration:none;font-size:11px;letter-spacing:2px;margin-left:24px;text-transform:uppercase}
+nav a:hover{color:var(--gold2)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero:before{
+ content:"";position:absolute;inset:0;
+ background:url("rothad-sancagi.webp") center/cover no-repeat;
+ filter:brightness(.42) saturate(.8)
+}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.22),rgba(0,0,0,.65)),linear-gradient(0deg,#070907,transparent 45%,rgba(0,0,0,.3))}
+.hero-content{position:relative;z-index:2;text-align:center;padding:80px 20px 60px;max-width:1000px}
+.crest{width:120px;height:120px;margin:0 auto 25px;border:1px solid var(--gold);padding:8px;background:rgba(0,0,0,.35)}
+.crest img{width:100%;height:100%;object-fit:cover}
+.kicker{font-size:11px;letter-spacing:6px;color:var(--gold2);text-transform:uppercase}
+h1{font-family:Georgia,serif;font-size:clamp(56px,10vw,120px);letter-spacing:9px;line-height:.9;margin:18px 0;text-shadow:0 5px 30px #000}
+.subtitle{font-family:Georgia,serif;color:#e0c57c;font-size:20px;letter-spacing:4px}
+.hero-buttons{margin-top:35px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border:1px solid var(--gold);color:var(--text);text-decoration:none;text-transform:uppercase;letter-spacing:2px;font-size:11px;background:rgba(5,9,6,.72)}
+.btn.primary{background:var(--gold);color:#080a07}.btn:hover{filter:brightness(1.12)}
+section{padding:105px 8%;border-top:1px solid rgba(255,255,255,.05)}
+.section-kicker{font-size:10px;color:var(--gold);letter-spacing:5px;text-transform:uppercase}
+h2{font:600 clamp(35px,5vw,60px) Georgia,serif;margin:10px 0 20px}
+.divider{width:90px;height:1px;background:var(--gold);margin:24px 0}
+.story{max-width:930px;color:var(--muted);font-size:16px}
+.story p{margin-bottom:24px}
+.story .quote{font:italic 21px Georgia,serif;color:var(--gold2);padding:8px 0 8px 22px;border-left:2px solid var(--gold)}
+.map-wrap{margin-top:45px;border:1px solid var(--line);padding:8px;background:#0b100c}
+.map-wrap img{width:100%;display:block}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}
+.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);padding:30px;min-height:240px}
+.card .num{color:var(--gold);font-size:10px;letter-spacing:3px}
+.card h3{font:26px Georgia,serif;margin:14px 0 10px}.card p{color:var(--muted);font-size:14px}
+.discord{background:radial-gradient(circle at 70% 30%,#152318,#070907 60%)}
+.discord-box{max-width:1050px;margin:45px auto 0;padding:42px;border:1px solid var(--line);background:rgba(8,13,9,.82);text-align:center}
+.discord-icon{font-size:45px;margin-bottom:10px}.discord-box h3{font:34px Georgia,serif}.discord-box p{max-width:650px;margin:12px auto 25px;color:var(--muted)}
+footer{padding:30px 8%;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#667066;font-size:11px}
+@media(max-width:800px){nav{padding:15px 5%}nav div:last-child{display:none}.cards{grid-template-columns:1fr}section{padding:75px 7%}.hero{min-height:90vh}footer{flex-direction:column;gap:8px;text-align:center}}
+
+.rank-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:42px}
+.rank-card{display:flex;align-items:center;gap:20px;padding:24px;background:linear-gradient(145deg,#151e16,#0a0e0b);border:1px solid var(--line)}
+.rank-card.sovereign{grid-column:1/-1;border-color:rgba(228,201,128,.55);background:linear-gradient(145deg,#1b2116,#0b0e09)}
+.rank-card.officer{padding:20px}
+.rank-badge{width:54px;height:54px;flex:0 0 54px;display:grid;place-items:center;border:1px solid rgba(201,168,91,.4);color:var(--gold2);font-family:Georgia,serif;font-size:25px;background:rgba(0,0,0,.25)}
+.rank-title{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+.rank-card h3{font:24px Georgia,serif;margin:5px 0 2px;color:var(--text)}
+.rank-card p{font-size:13px;color:var(--muted);margin:0}
+@media(max-width:800px){.rank-list{grid-template-columns:1fr}.rank-card.sovereign{grid-column:auto}}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">ROTHAD HANESİ</div>
+  <div>
+    <a href="#hikaye">Hikâye</a>
+    <a href="#topraklar">Topraklar</a>
+    <a href="#rutbeler">Rütbeler</a>
+    <a href="#discord">Discord</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="crest"><img src="rothad-sancagi.webp" alt="Rothad Hanesi sancağı"></div>
+    <div class="kicker">Vlandia • Rothad Hanesi</div>
+    <h1>SARGOTH</h1>
+    <div class="subtitle">MERTLİK KANUNDUR · SÖZ KALKANDIR</div>
+    <div class="hero-buttons">
+      <a class="btn primary" href="#hikaye">Haneyi Tanı</a>
+      <a class="btn" href="#topraklar">Baronluğu Gör</a>
+    </div>
+  </div>
+</header>
+
+<section id="hikaye">
+  <div class="section-kicker">Sargoth'un Kroniği</div>
+  <h2>Rüzgârın temkinli estiği sınır.</h2>
+  <div class="divider"></div>
+  <div class="story">
+    <p>Krallığın en uç noktasında, rüzgârın bile temkinli estiği o sert sınır hattında Sargoth şehri uzanırdı. Sargoth, ticaretle değil, kılıç sesiyle anılırdı. Her mevsim başka bir ordunun gölgesi düşer, her gece başka bir yağma ateşi ufku kızartırdı. Halkı korkuyla yaşamaya alışmıştı; kapılar gün batmadan kapanır, çocuklara sessiz olmaları öğretilirdi.</p>
+    <p>Bu kale taşla örülmüş olsa da, onu ayakta tutan harç sadakatti. Rothad Hanesi’nin mührü, sadece bir arma değil; bir yemin, bir yaşam biçimiydi.</p>
+    <p class="quote">“Mertlik kanundur, söz kalkandır.”</p>
+    <p>Kalenin beyi Brémond dey Rothad, savaş meydanında olduğu kadar suskunluğuyla da tanınırdı. Kuşatma başladığında Sargoth çoktan düşmüş gibiydi. Şehir defalarca yağmalanmış, sokaklar boşalmıştı. Tüccarlar kaçmış, askerler dağılmış, geriye sadece duman ve korku kalmıştı.</p>
+    <p>Düşman ordusu dalga dalga geliyordu. Sayıları çoktu, hileleri boldur. Gece baskınları, gizli geçitler, rüşvet teklifleri… Hepsi denendi.</p>
+    <p>Bir gece, kalenin ileri gelenleri Beornraed’in çadırında toplandı. Yüzlerinde yorgunluk, gözlerinde endişe vardı.</p>
+    <p class="quote">“Beyim, Sargoth düştü. Biz de çekilelim. Bu savaş kazanılmaz.”</p>
+    <p>Brémond ağır ağır ayağa kalktı. Dışarıdan gelen rüzgâr meşaleleri titretiyordu. Gözlerini kapıya dikti.</p>
+    <p class="quote">“Rothad’ın kapıları korkuyla açılmaz.”</p>
+  </div>
+</section>
+
+<section id="topraklar">
+  <div class="section-kicker">Baronluk</div>
+  <h2>Sargoth'un toprakları.</h2>
+  <div class="divider"></div>
+  <p class="story">Sargoth'un gücü yalnızca surlarından gelmez. Ona bağlı köyler, yollar, madenler ve tarlalar sınırdaki yaşamın devamını sağlar.</p>
+  <div class="map-wrap"><img src="sargoth-haritasi.png" alt="Sargoth Baronluğu ve bağlı köylerin haritası"></div>
+  <div class="cards">
+    <article class="card"><div class="num">01 / MERKEZ</div><h3>Sargoth Baronluğu</h3><p>Rothad Hanesi'nin merkezi; sınır hattının kalbi ve hanenin sancağının yükseldiği kale.</p></article>
+    <article class="card"><div class="num">02 / DEMİR</div><h3>Etirburg</h3><p>Zengin demir yataklarıyla Sargoth'a sürekli cevher sağlar. Her zırhta Etirburg'un emeği vardır.</p></article>
+    <article class="card"><div class="num">03 / KETEN</div><h3>Calioc</h3><p>Keten üretimiyle tanınır. Savaşçıların giysileri, sargıları ve ihtiyaçları buradan karşılanır.</p></article>
+  </div>
+</section>
+
+<section>
+  <div class="section-kicker">Köy Kronikleri</div>
+  <h2>Etirburg & Calioc</h2>
+  <div class="divider"></div>
+  <div class="cards">
+    <article class="card"><div class="num">ETİRBURG</div><h3>“Etirburg asla zayıf olmadı.”</h3><p>Defalarca saldırıya uğradı, yakıldı ve yıkıldı. Köylüler gerektiğinde madenci, gerektiğinde savaşçı oldu; kervanlarını ve sınırlarını korudu.</p></article>
+    <article class="card"><div class="num">CALİOC</div><h3>“Calioc yine eker.”</h3><p>Tarlaları defalarca yakıldı ama halk yeniden ekti, yeniden dokudu. Calioc'un keteni Sargoth'un savaşçılarını ve halkını besledi.</p></article>
+    <article class="card"><div class="num">ROTHAD</div><h3>Birlik ve sadakat</h3><p>Sargoth'un gücü surlarda olduğu kadar ona bağlı insanların emeğinde ve aynı sancak altında birleşen sadakatindedir.</p></article>
+  </div>
+</section>
+
+
+<section id="rutbeler">
+  <div class="section-kicker">Rothad Hanesi</div>
+  <h2>Hane Rütbeleri</h2>
+  <div class="divider"></div>
+  <p class="story">Sargoth Hanesi'nin mevcut hiyerarşisi ve görev sahipleri. Hane büyüdükçe bu liste yeni rütbeler ve isimlerle genişletilecektir.</p>
+
+  <div class="rank-list">
+    <div class="rank-card sovereign">
+      <div class="rank-badge">♛</div>
+      <div>
+        <span class="rank-title">BARON</span>
+        <h3>Bremond dey Rothad</h3>
+        <p>Sargoth Baronluğu'nun beyi ve Rothad Hanesi'nin lideri.</p>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="rank-badge">♜</div>
+      <div>
+        <span class="rank-title">REEVE</span>
+        <h3>Viserys Murolas dey Veron</h3>
+        <p>Haneye bağlı idari ve bölgesel görevlerden sorumlu.</p>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="rank-badge">⚜</div>
+      <div>
+        <span class="rank-title">CHIEF</span>
+        <h3>Lenox de Etirburg</h3>
+        <p>Etirburg'un hane içindeki sorumlusu.</p>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="rank-badge">⚜</div>
+      <div>
+        <span class="rank-title">CHIEF</span>
+        <h3>Esdicnha de Calioc</h3>
+        <p>Calioc'un hane içindeki sorumlusu.</p>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="rank-badge">♞</div>
+      <div>
+        <span class="rank-title">ESQUIRE</span>
+        <h3>Tashkun</h3>
+        <p>Hanenin mevcut şövalyelik hizmet kademelerinden biri.</p>
+      </div>
+    </div>
+
+    <div class="rank-card officer">
+      <div class="rank-badge">♙</div>
+      <div>
+        <span class="rank-title">HEAD OFFICER</span>
+        <h3>Vlamond</h3>
+        <p>Hane subay yapılanmasının başındaki görev sahibi.</p>
+      </div>
+    </div>
+
+    <div class="rank-card officer">
+      <div class="rank-badge">♙</div>
+      <div>
+        <span class="rank-title">OFFICER</span>
+        <h3>Vasilius</h3>
+      </div>
+    </div>
+
+    <div class="rank-card officer">
+      <div class="rank-badge">♙</div>
+      <div>
+        <span class="rank-title">OFFICER</span>
+        <h3>Pekarkos</h3>
+      </div>
+    </div>
+
+    <div class="rank-card officer">
+      <div class="rank-badge">♙</div>
+      <div>
+        <span class="rank-title">OFFICER</span>
+        <h3>Kenshi</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="discord" class="discord">
+  <div class="section-kicker">Hane Karargâhı</div>
+  <h2>Discord Karargâhı</h2>
+  <div class="divider"></div>
+  <div class="discord-box">
+    <div class="discord-icon">◈</div>
+    <h3>Hanenin sesi burada yükselir.</h3>
+    <p>Savaş duyuruları, etkinlikler, hane toplantıları, görevler, rol yapma ve üyeler arası iletişim için Sargoth Hanesi'nin Discord karargâhına katıl.</p>
+    <a class="btn primary" href="#" onclick="alert('Discord davet bağlantısını gönderdiğinde bu butona bağlayacağız.');return false;">Discord'a Katıl</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 SARGOTH HANESİ</span>
+  <span>VLANDIA • ROTHAD HANESİ</span>
+</footer>
+</body>
+</html>
